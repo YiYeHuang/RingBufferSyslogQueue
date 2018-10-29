@@ -30,7 +30,7 @@ choose to define the thread waiting pattern
                                                         Eventhandler3 /
 
 For more complicate business logic, more levels of event handler can be implemented to decouple the thread usage, which 
-is the same idea of actors in Akka framework.
+is the same idea of actors in [Akka framework](https://doc.akka.io/docs/akka/2.5/actors.html).
 
                                            Eventhandler1 \                         EventFinalStageHandler1
     producer --- work ----> Disruptor ---> Eventhandler2 - Eventlevel2handle ----> EventFinalStageHandler2
