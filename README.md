@@ -14,12 +14,12 @@ the key to this problem is unblocked the thread.
 
 
 ## Implementation
-### Blocking: BlockingQueue
+### Blocking: [BlockingQueue](https://github.com/YiYeHuang/SyslogQueue/tree/master/src/main/java/blockingqueueImpl)
 The blocking queue implementation is a simple simulation of current logging system structure. In the original project, 
-the ArrayBlcokingQueue is used to handle the producer and consumer problem, which is very very very horriable. The initial
-fix change the structure to LinkedBlockingDqueue to separate the put lock and take lock. 
+the [ArrayBlcokingQueue](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ArrayBlockingQueue.html) is used to handle the producer and consumer problem, which is very very very horriable. The initial
+fix change the structure to [LinkedBlockingDqueue](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingQueue.html) to separate the put lock and take lock. 
 
-### Non-Blocking: LMAX Disruptor Framework or A.K.A the RingBuffer
+### Non-Blocking: [LMAX Disruptor Framework or A.K.A the RingBuffer](https://github.com/YiYeHuang/SyslogQueue/tree/master/src/main/java/ringbufferimpl)
 Since the business logic for this case is pretty simple, I did not directly used the Disruptor framework, instead, I used
 the core ringbuffer to handle most of the work. The key difference is that the Disruptor handle the producer work with a 
 sequence model and hand over to multiple consumer. The consumer is implement as a EventHandler. A wait strategy can be 
