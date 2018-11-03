@@ -1,4 +1,4 @@
-# SyslogQueue
+# RingBuffer SyslogQueue
 Moved from [My Java notes repo](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime)
 
 ##Intention
